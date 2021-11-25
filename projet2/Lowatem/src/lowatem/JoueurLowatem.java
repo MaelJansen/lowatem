@@ -36,9 +36,6 @@ public class JoueurLowatem implements IJoueurLowatem {
                 }
             }
         }
-
-        // déplacements possibles depuis (g,G)
-        //ajoutDeplDepuis(Coordonnees.depuisCars('g','G'), actions, nbPv);
         System.out.println("actionsPossibles : fin");
         return actions.nettoyer();
     }

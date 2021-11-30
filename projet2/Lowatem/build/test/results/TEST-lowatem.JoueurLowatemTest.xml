@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="info-210-07x.iut.bx1" name="lowatem.JoueurLowatemTest" skipped="0" tests="4" time="0.108" timestamp="2021-11-25T10:59:02">
+<testsuite errors="0" failures="0" hostname="info-207-06x.iut.bx1" name="lowatem.JoueurLowatemTest" skipped="0" tests="4" time="0.147" timestamp="2021-11-30T14:21:47">
   <properties>
     <property name="libs.spring-framework300.classpath" value="/mnt/raddix/opt/netbeans-12.3/platform/modules/org-apache-commons-logging.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/cglib-2.2.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-aop-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-aspects-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-beans-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-context-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-context-support-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-core-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-expression-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-instrument-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-instrument-tomcat-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-jdbc-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-jms-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-orm-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-oxm-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-struts-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-test-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-tx-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-web-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-webmvc-3.2.18.RELEASE.jar:/mnt/raddix/opt/netbeans-12.3/java/modules/ext/spring-3.0/spring-webmvc-portlet-3.2.18.RELEASE.jar" />
     <property name="javac.test.classpath" value=":build/classes:/mnt/raddix/opt/netbeans-12.3/platform/modules/ext/junit-4.13.1.jar:/mnt/raddix/opt/netbeans-12.3/platform/modules/ext/hamcrest-core-1.3.jar" />
@@ -17,7 +17,7 @@
     <property name="libs.jsp-compilation.src" value="" />
     <property name="libs.JWSAntTasks.javadoc" value="" />
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner lowatem.JoueurLowatemTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/build/test/results/TEST-lowatem.JoueurLowatemTest.xml crashfile=/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/build/junitvmwatcher14169422742029063379.properties propsfile=/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/build/junit14567682391964110733.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner lowatem.JoueurLowatemTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/build/test/results/TEST-lowatem.JoueurLowatemTest.xml crashfile=/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/build/junitvmwatcher14304545215760548200.properties propsfile=/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/build/junit16809910001254722953.properties" />
     <property name="jdk.debug" value="release" />
     <property name="libs.spring-framework300.src" value="" />
     <property name="javadoc.use" value="true" />
@@ -36,10 +36,10 @@
     <property name="libs.eclipselink.maven-pom" value="" />
     <property name="libs.metro.maven-pom" value="" />
     <property name="libs.JAXB-ENDORSED.javadoc" value="" />
-    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="true" />
+    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
     <property name="sun.java2d.noddraw" value="true" />
     <property name="sun.zip.disableMemoryMapping" value="true" />
-    <property name="jnidispatch.path" value="/mnt/roost/users/majansen/.cache/JNA/temp/jna7206433562634366323.tmp" />
+    <property name="jnidispatch.path" value="/mnt/roost/users/majansen/.cache/JNA/temp/jna6479390972813223898.tmp" />
     <property name="libs.jsf12.src" value="" />
     <property name="libs.primefaces.javadoc" value="" />
     <property name="libs.jsp-compilation.javadoc" value="" />
@@ -195,7 +195,7 @@
     <property name="libs.jsp-compilation-syscp.classpath" value="/mnt/raddix/opt/netbeans-12.3/extide/ant/lib/ant.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/servlet3.1-jsp2.3-api.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/glassfish-jspparser-4.0.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/jstl-impl.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/jsf-2_2/javax.faces.jar" />
     <property name="libs.jsp-compilation.classpath" value="/mnt/raddix/opt/netbeans-12.3/extide/ant/lib/ant.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/servlet3.1-jsp2.3-api.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/glassfish-jspparser-4.0.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/jsf-2_2/javax.faces.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/jstl-api.jar:/mnt/raddix/opt/netbeans-12.3/extide/ant/lib/ant-launcher.jar" />
     <property name="libs.javaee-api-6.0.classpath" value="/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/javaee-api-6.0.jar" />
-    <property name="javac.includesfile.binary" value="/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/null719323960" />
+    <property name="javac.includesfile.binary" value="/mnt/roost/users/majansen/algo-prog/projet2_lowatem/projet2/Lowatem/null79223258" />
     <property name="libs.javaee-api-7.0.classpath" value="/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/javaee-api-7.0.jar" />
     <property name="sun.cpu.isalist" value="" />
     <property name="libs.restapi.maven-pom" value="" />
@@ -233,7 +233,7 @@
     <property name="libs.javaee-web-api-7.0.classpath" value="/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/javaee-web-api-7.0.jar" />
     <property name="file.encoding" value="UTF-8" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
-    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|info-210-07x.iut.bx1" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|info-207-06x.iut.bx1" />
     <property name="libs.restlib.javadoc" value="" />
     <property name="libs.absolutelayout.classpath" value="/mnt/raddix/opt/netbeans-12.3/java/modules/ext/AbsoluteLayout.jar" />
     <property name="do.archive" value="true" />
@@ -260,7 +260,7 @@
     <property name="libs.CopyLibs.maven-pom" value="" />
     <property name="libs.jakartaee-api-8.0.maven-pom" value="" />
     <property name="jdkBug6558476" value="false" />
-    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|info-210-07x.iut.bx1" />
+    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|info-207-06x.iut.bx1" />
     <property name="javadoc.author" value="false" />
     <property name="main.class" value="" />
     <property name="libs.jsp-compilation-syscp.javadoc" value="" />
@@ -411,26 +411,12 @@
     <property name="libs.javaee-endorsed-api-6.0.classpath" value="/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/javaee6-endorsed/javax.annotation.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/javaee6-endorsed/jaxb-api-osgi.jar:/mnt/raddix/opt/netbeans-12.3/enterprise/modules/ext/javaee6-endorsed/webservices-api-osgi.jar" />
   </properties>
   <testcase classname="lowatem.JoueurLowatemTest" name="testNbPointsDeVie" time="0.002" />
-  <testcase classname="lowatem.JoueurLowatemTest" name="testAjoutDeplDepuis" time="0.003" />
+  <testcase classname="lowatem.JoueurLowatemTest" name="testAjoutDeplDepuis" time="0.008" />
   <testcase classname="lowatem.JoueurLowatemTest" name="testChaineActionDepl" time="0.0" />
-  <testcase classname="lowatem.JoueurLowatemTest" name="testActionsPossibles" time="0.016">
-    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
-	at lowatem.JoueurLowatemTest.testActionpossibles_niveau3(JoueurLowatemTest.java:112)
-	at lowatem.JoueurLowatemTest.testActionsPossibles(JoueurLowatemTest.java:21)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-</failure>
-  </testcase>
-  <system-out><![CDATA[actionsPossibles : lancement le 25/11/2021 11:59:02.251
+  <testcase classname="lowatem.JoueurLowatemTest" name="testActionsPossibles" time="0.016" />
+  <system-out><![CDATA[actionsPossibles : lancement le 30/11/2021 15:21:47.130
 actionsPossibles : fin
-[gGDfG,9,0, gGDeG,9,0, gGDdG,9,0, gGDcG,9,0, gGDbG,9,0, gGDaG,9,0, gGDhG,9,0, gGDiG,9,0, gGDjG,9,0, gGDkG,9,0, gGDlG,9,0, gGDmG,9,0, gGDnG,9,0, gGDgH,9,0, gGDgI,9,0, gGDgJ,9,0, gGDgK,9,0, gGDgL,9,0, gGDgM,9,0, gGDgN,9,0, gGDgF,9,0, gGDgE,9,0, gGDgD,9,0, gGDgC,9,0, gGDgB,9,0, gGDgA,9,0, gGDgG,9,0]
-actionsPossibles : lancement le 25/11/2021 11:59:02.255
-actionsPossibles : fin
-[dADcA,9,0, dADbA,9,0, dADaA,9,0, dADeA,9,0, dADfA,9,0, dADgA,9,0, dADhA,9,0, dADiA,9,0, dADjA,9,0, dADkA,9,0, dADlA,9,0, dADmA,9,0, dADnA,9,0, dADdB,9,0, dADdC,9,0, dADdD,9,0, dADdE,9,0, dADdF,9,0, dADdG,9,0, dADdH,9,0, dADdI,9,0, dADdJ,9,0, dADdK,9,0, dADdL,9,0, dADdM,9,0, dADdN,9,0, dADdA,9,0]
-actionsPossibles : lancement le 25/11/2021 11:59:02.260
-actionsPossibles : fin
-[dADcA,9,0, dADbA,9,0, dADaA,9,0, dADeA,9,0, dADfA,9,0, dADgA,9,0, dADhA,9,0, dADiA,9,0, dADjA,9,0, dADkA,9,0, dADlA,9,0, dADmA,9,0, dADnA,9,0, dADdB,9,0, dADdC,9,0, dADdD,9,0, dADdE,9,0, dADdF,9,0, dADdG,9,0, dADdH,9,0, dADdI,9,0, dADdJ,9,0, dADdK,9,0, dADdL,9,0, dADdM,9,0, dADdN,9,0, dADdA,9,0, dKDcK,9,0, dKDbK,9,0, dKDaK,9,0, dKDeK,9,0, dKDfK,9,0, dKDgK,9,0, dKDhK,9,0, dKDiK,9,0, dKDjK,9,0, dKDkK,9,0, dKDlK,9,0, dKDmK,9,0, dKDnK,9,0, dKDdL,9,0, dKDdM,9,0, dKDdN,9,0, dKDdJ,9,0, dKDdI,9,0, dKDdH,9,0, dKDdG,9,0, dKDdF,9,0, dKDdE,9,0, dKDdD,9,0, dKDdC,9,0, dKDdB,9,0, dKDdA,9,0, dKDdK,9,0, eFDdF,9,0, eFDcF,9,0, eFDbF,9,0, eFDaF,9,0, eFDfF,9,0, eFDgF,9,0, eFDhF,9,0, eFDiF,9,0, eFDjF,9,0, eFDkF,9,0, eFDlF,9,0, eFDmF,9,0, eFDnF,9,0, eFDeG,9,0, eFDeH,9,0, eFDeI,9,0, eFDeJ,9,0, eFDeK,9,0, eFDeL,9,0, eFDeM,9,0, eFDeN,9,0, eFDeE,9,0, eFDeD,9,0, eFDeC,9,0, eFDeB,9,0, eFDeA,9,0, eFDeF,9,0, hGDgG,9,0, hGDfG,9,0, hGDeG,9,0, hGDdG,9,0, hGDcG,9,0, hGDbG,9,0, hGDaG,9,0, hGDiG,9,0, hGDjG,9,0, hGDkG,9,0, hGDlG,9,0, hGDmG,9,0, hGDnG,9,0, hGDhH,9,0, hGDhI,9,0, hGDhJ,9,0, hGDhK,9,0, hGDhL,9,0, hGDhM,9,0, hGDhN,9,0, hGDhF,9,0, hGDhE,9,0, hGDhD,9,0, hGDhC,9,0, hGDhB,9,0, hGDhA,9,0, hGDhG,9,0, jADiA,9,0, jADhA,9,0, jADgA,9,0, jADfA,9,0, jADeA,9,0, jADdA,9,0, jADcA,9,0, jADbA,9,0, jADaA,9,0, jADkA,9,0, jADlA,9,0, jADmA,9,0, jADnA,9,0, jADjB,9,0, jADjC,9,0, jADjD,9,0, jADjE,9,0, jADjF,9,0, jADjG,9,0, jADjH,9,0, jADjI,9,0, jADjJ,9,0, jADjK,9,0, jADjL,9,0, jADjM,9,0, jADjN,9,0, jADjA,9,0]
+[dADcA,34,0, dADbA,34,0, dADaA,34,0, dADeA,34,0, dADfA,34,0, dADgA,34,0, dADhA,34,0, dADiA,34,0, dADkA,34,0, dADlA,34,0, dADmA,34,0, dADnA,34,0, dADdB,34,0, dADdC,34,0, dADdD,34,0, dADdE,34,0, dADdF,34,0, dADdG,34,0, dADdH,34,0, dADdI,34,0, dADdJ,34,0, dADdL,34,0, dADdM,34,0, dADdN,34,0, dADdA,34,0, dKDcK,34,0, dKDbK,34,0, dKDaK,34,0, dKDeK,34,0, dKDfK,34,0, dKDgK,34,0, dKDhK,34,0, dKDiK,34,0, dKDjK,34,0, dKDkK,34,0, dKDlK,34,0, dKDmK,34,0, dKDnK,34,0, dKDdL,34,0, dKDdM,34,0, dKDdN,34,0, dKDdJ,34,0, dKDdI,34,0, dKDdH,34,0, dKDdG,34,0, dKDdF,34,0, dKDdE,34,0, dKDdD,34,0, dKDdC,34,0, dKDdB,34,0, dKDdK,34,0, eFDdF,34,0, eFDcF,34,0, eFDbF,34,0, eFDaF,34,0, eFDfF,34,0, eFDgF,34,0, eFDhF,34,0, eFDiF,34,0, eFDjF,34,0, eFDkF,34,0, eFDlF,34,0, eFDmF,34,0, eFDnF,34,0, eFDeG,34,0, eFDeH,34,0, eFDeI,34,0, eFDeJ,34,0, eFDeK,34,0, eFDeL,34,0, eFDeM,34,0, eFDeN,34,0, eFDeE,34,0, eFDeD,34,0, eFDeC,34,0, eFDeB,34,0, eFDeA,34,0, eFDeF,34,0, hGDgG,34,0, hGDfG,34,0, hGDeG,34,0, hGDdG,34,0, hGDcG,34,0, hGDbG,34,0, hGDaG,34,0, hGDiG,34,0, hGDjG,34,0, hGDkG,34,0, hGDlG,34,0, hGDmG,34,0, hGDnG,34,0, hGDhH,34,0, hGDhI,34,0, hGDhJ,34,0, hGDhK,34,0, hGDhL,34,0, hGDhM,34,0, hGDhN,34,0, hGDhF,34,0, hGDhE,34,0, hGDhD,34,0, hGDhC,34,0, hGDhB,34,0, hGDhA,34,0, hGDhG,34,0, jADiA,34,0, jADhA,34,0, jADgA,34,0, jADfA,34,0, jADeA,34,0, jADcA,34,0, jADbA,34,0, jADaA,34,0, jADkA,34,0, jADlA,34,0, jADmA,34,0, jADnA,34,0, jADjB,34,0, jADjC,34,0, jADjD,34,0, jADjE,34,0, jADjF,34,0, jADjG,34,0, jADjH,34,0, jADjI,34,0, jADjJ,34,0, jADjK,34,0, jADjL,34,0, jADjM,34,0, jADjN,34,0, jADjA,34,0]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

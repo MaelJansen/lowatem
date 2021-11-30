@@ -27,19 +27,19 @@ public class JoueurLowatem implements IJoueurLowatem {
         ActionsPossibles actions = new ActionsPossibles();
         // calculer les points de vie sur le plateau initial
         NbPointsDeVie nbPv = nbPointsDeVie(plateau);
-        // déplacement possible depuis n'importe quelle case
+        // déplacement possible depuis n'importe quelle case (grace au parcours du tableau de jeu)
         for (int i = 0; i < Coordonnees.NB_LIGNES; i++) {
             for (int j = 0; j < Coordonnees.NB_COLONNES; j++) {
                 if (plateau[i][j].unitePresente()) {
                     Coordonnees coordonnees = new Coordonnees(i, j);
-                    ajoutDeplDepuis((coordonnees), actions, nbPv);
+                    ajoutDeplDepuis((coordonnees), actions, nbPv, plateau);
                 }
             }
         }
         System.out.println("actionsPossibles : fin");
         return actions.nettoyer();
     }
-
+   
     /**
      * Nombre de points de vie de chaque joueur sur le plateau.
      *
@@ -47,8 +47,20 @@ public class JoueurLowatem implements IJoueurLowatem {
      * @return le nombre de pions de cette couleur sur le plateau
      */
     static NbPointsDeVie nbPointsDeVie(Case[][] plateau) {
-        // TODO il y en aura besoin à un moment !
-        return new NbPointsDeVie(9, 0);
+        int pvRouge = 0;
+        int pvNoir = 0;
+        for (int i = 0; i < Coordonnees.NB_LIGNES; i++) {
+            for (int j = 0; j < Coordonnees.NB_COLONNES; j++) {
+                if (plateau[i][j].unitePresente()) {
+                    if (plateau[i][j].couleurUnite == 'N'){
+                        pvNoir = pvNoir + plateau[i][j].pointsDeVie;
+                    }else{
+                        pvRouge = pvRouge + plateau[i][j].pointsDeVie; 
+                    }
+                }
+            }
+        }
+        return new NbPointsDeVie(pvRouge, pvNoir);
     }
 
     /**
@@ -59,10 +71,10 @@ public class JoueurLowatem implements IJoueurLowatem {
      * @param nbPv nombre de points de vie de chaque joueur sur le plateau
      * initial
      */
-    void ajoutDeplDepuis(Coordonnees coord, ActionsPossibles actions, NbPointsDeVie nbPv) {
+    void ajoutDeplDepuis(Coordonnees coord, ActionsPossibles actions, NbPointsDeVie nbPv, Case[][] plateau) {
         // on part dans chacune des 4 directions
         for (Direction dir : Direction.toutes()) {
-            ajoutDeplDansDirection(dir, coord, actions, nbPv);
+            ajoutDeplDansDirection(dir, coord, actions, nbPv, plateau);
         }
         // on ajoute le déplacement "sur place"
         ajoutDepl(coord, coord, actions, nbPv);
@@ -79,10 +91,13 @@ public class JoueurLowatem implements IJoueurLowatem {
      * initial
      */
     void ajoutDeplDansDirection(Direction dir, Coordonnees src,
-            ActionsPossibles actions, NbPointsDeVie nbPv) {
+            ActionsPossibles actions, NbPointsDeVie nbPv, Case[][] plateau) {
         Coordonnees dst = src.suivantes(dir);
         while (dst.estDansPlateau()) {
-            ajoutDepl(src, dst, actions, nbPv);
+            // Si la case suivante est vide on peut se deplacer
+            if (!plateau[dst.ligne][dst.colonne].unitePresente()){
+                ajoutDepl(src, dst, actions, nbPv); 
+            }
             dst = dst.suivantes(dir);
         }
     }
@@ -98,7 +113,7 @@ public class JoueurLowatem implements IJoueurLowatem {
      */
     void ajoutDepl(Coordonnees src, Coordonnees dst, ActionsPossibles actions,
             NbPointsDeVie nbPv) {
-        actions.ajouterAction(chaineActionDepl(src, dst, nbPv));
+          actions.ajouterAction(chaineActionDepl(src, dst, nbPv));   
     }
 
     /**

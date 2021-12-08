@@ -18,7 +18,8 @@ public class JoueurLowatemTest {
     public void testActionsPossibles() {
         //testActionsPossibles_niveau1();
         //testActionsPossibles_niveau2();
-        testActionpossibles_niveau3();
+        //testActionpossibles_niveau3();
+        testActionpossibles_niveau4();
     }
 
     /**
@@ -117,6 +118,65 @@ public class JoueurLowatemTest {
         assertFalse(actionsPossibles.contient("dADjA,34,0"));
         assertFalse(actionsPossibles.contient("dADeB,34,0"));
         
+    }
+    
+    /**
+     * Test la fonction action possible au niveau 4 
+     * Il y'a deux couleurs de soldats sur le plateau
+     */
+    public void testActionpossibles_niveau4(){
+        // On crée les deux joueur pour nos test
+        JoueurLowatem joueur1 = new JoueurLowatem();
+        JoueurLowatem joueur2 = new JoueurLowatem();
+        // un plateau sur lequel on veut tester actionsPossibles() (créer pour le test)
+        Case[][] plateau = Utils.plateauDepuisTexte(PLATEAU_NIVEAU4);
+        // on choisit la couleur du joueur
+        char couleur = 'R';
+        char couleur2 = 'N';
+        // on choisit le niveau
+        int niveau = 1;
+        //On lance action possible pour le premier joueur
+        String[] actionsPossiblesDepuisPlateau
+                = joueur1.actionsPossibles(plateau, couleur, niveau);
+        ActionsPossibles actionsPossibles
+                = new ActionsPossibles(actionsPossiblesDepuisPlateau);
+        //On lance actions possible pour le deuxième joueur
+        String[] actionsPossiblesDepuisPlateau2
+                = joueur2.actionsPossibles(plateau, couleur2, niveau);
+        ActionsPossibles actionsPossibles2
+                = new ActionsPossibles(actionsPossiblesDepuisPlateau2);
+        // on peut afficher toutes les actions possibles calculées :
+        actionsPossibles.afficher();
+        actionsPossibles2.afficher();
+        /* on peut tester si une action est dans les actions possibles
+            pour le joueur 1
+        */
+        // si il n'y a pas deja de soldat sur la case de destination
+        assertTrue(actionsPossibles.contient("hGDhL,34,22"));
+        assertTrue(actionsPossibles.contient("jADcA,34,22"));
+        assertTrue(actionsPossibles.contient("eFDcF,34,22"));
+        assertTrue(actionsPossibles.contient("dKDkK,34,22"));
+        // on peut aussi tester si une action n'est pas dans les actions possibles
+        // Si il y a deja une unité sur la case de destination
+        assertFalse(actionsPossibles.contient("dADdK,34,22"));
+        // Ou si le nomobre de points de vies n'est pas le bon
+        assertFalse(actionsPossibles.contient("dADdH,30,22"));
+        assertFalse(actionsPossibles.contient("dADdJ,34,2"));
+        // Ou encore si le joueur n'est pas de la bonne couleur
+        assertFalse(actionsPossibles.contient("gBDgK,34,22"));
+        /* on peut tester si une action est dans les actions possibles
+            pour le joueur 2
+        */
+        // si il n'y a pas deja de soldat sur la case de destination
+        assertTrue(actionsPossibles2.contient("gBDgK,34,22"));
+        assertTrue(actionsPossibles2.contient("bFDfF,34,22"));
+        // on peut aussi tester si une action n'est pas dans les actions possibles
+        // Si il y a deja une unité sur la case de destination
+        assertFalse(actionsPossibles2.contient("jKDdK,34,22"));
+        // Ou si le nomobre de points de vies n'est pas le bon
+        assertFalse(actionsPossibles2.contient("bFDbM,34,20"));
+        // Et si le joueur n'est pas de la bonne couleur
+        assertFalse(actionsPossibles2.contient("eFDeM,34,22"));
     }
     
     @Test
@@ -274,6 +334,38 @@ public class JoueurLowatemTest {
             + "i|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
             + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
             + "j|SR3|   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "k|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "l|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "m|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "n|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n";
+    
+    final String PLATEAU_NIVEAU4
+            = "   A   B   C   D   E   F   G   H   I   J   K   L   M   N \n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "a|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "b|   |   |   |   |   |SN5|   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "c|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "d|SR9|   |   |   |   |   |   |   |   |   |SR5|   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "e|   |   |   |   |   |SR9|   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "f|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "g|   |SN8|   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "h|   |   |   |   |   |   |SR8|   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "i|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
+            + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
+            + "j|SR3|   |   |   |   |   |   |   |   |   |SN9|   |   |   |\n"
             + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"
             + "k|   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n"
             + " +---+---+---+---+---+---+---+---+---+---+---+---+---+---+\n"

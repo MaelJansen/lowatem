@@ -27,19 +27,47 @@ public class JoueurLowatem implements IJoueurLowatem {
         ActionsPossibles actions = new ActionsPossibles();
         // calculer les points de vie sur le plateau initial
         NbPointsDeVie nbPv = nbPointsDeVie(plateau);
-        // déplacement possible depuis n'importe quelle case (grace au parcours du tableau de jeu)
+        deplacementDepuisToutesLesCases(plateau, actions, nbPv, couleurJoueur);
+        System.out.println("actionsPossibles : fin");
+        return actions.nettoyer();
+    }
+    
+    /**
+     * Une fonction qui permet d'ajouter des deplacements depuis n'importe quelle case
+     * (grace a un parcours de tableau)
+     * testActionpossibles_niveau4
+     * @param plateau
+     * @param actionstestActionpossibles_niveau4
+     * @param nbPv 
+     */
+    void deplacementDepuisToutesLesCases(Case[][] plateau, ActionsPossibles actions, NbPointsDeVie nbPv, char couleurJoueur){
         for (int i = 0; i < Coordonnees.NB_LIGNES; i++) {
             for (int j = 0; j < Coordonnees.NB_COLONNES; j++) {
-                if (plateau[i][j].unitePresente()) {
+                if (plateau[i][j].unitePresente() && estDeLaBonneCouleur(couleurJoueur, plateau, i, j)) {
                     Coordonnees coordonnees = new Coordonnees(i, j);
                     ajoutDeplDepuis((coordonnees), actions, nbPv, plateau);
                 }
             }
         }
-        System.out.println("actionsPossibles : fin");
-        return actions.nettoyer();
     }
-   
+    
+    /**
+     * Une qui permet de savoir si le joueur est de la bonne couleur
+     * 
+     * @param couleur
+     * @param plateau
+     * @param i
+     * @param j
+     * @return Vrai si la couleur du joueur correspond au soldat
+     */
+    boolean estDeLaBonneCouleur(char couleur, Case[][] plateau, int i, int j){
+        boolean bonneCouleur = false;
+        if (plateau[i][j].couleurUnite == couleur){
+            bonneCouleur = true;
+        }
+        return bonneCouleur;
+    }
+    
     /**
      * Nombre de points de vie de chaque joueur sur le plateau.
      *

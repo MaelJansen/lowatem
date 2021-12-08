@@ -36,13 +36,14 @@ public class JoueurLowatem implements IJoueurLowatem {
      * Une fonction qui permet d'ajouter des deplacements depuis n'importe quelle case
      * (grace a un parcours de tableau)
      * testActionpossibles_niveau4
-     * @param plateau
-     * @param actionstestActionpossibles_niveau4
-     * @param nbPv 
+     * @param plateau Le plateau sur lequel on joue
+     * @param actions l'ensemble des actions possibles
+     * @param nbPv nombre de points de vie total sur le plateau
      */
     void deplacementDepuisToutesLesCases(Case[][] plateau, ActionsPossibles actions, NbPointsDeVie nbPv, char couleurJoueur){
         for (int i = 0; i < Coordonnees.NB_LIGNES; i++) {
             for (int j = 0; j < Coordonnees.NB_COLONNES; j++) {
+                // si une unite est presente sur la case et est de la bonne couleur on ajoute un deplacement
                 if (plateau[i][j].unitePresente() && estDeLaBonneCouleur(couleurJoueur, plateau, i, j)) {
                     Coordonnees coordonnees = new Coordonnees(i, j);
                     ajoutDeplDepuis((coordonnees), actions, nbPv, plateau);
@@ -54,14 +55,15 @@ public class JoueurLowatem implements IJoueurLowatem {
     /**
      * Une qui permet de savoir si le joueur est de la bonne couleur
      * 
-     * @param couleur
-     * @param plateau
-     * @param i
-     * @param j
+     * @param couleur La couleur du joueur qui joue
+     * @param plateau Le plateau du je(pour ce niveau)
+     * @param i la ligne du plateau qui correspond a l'emplacement du joueur
+     * @param j la colonne du plateau qui correspond a l'emplacement du joueur
      * @return Vrai si la couleur du joueur correspond au soldat
      */
     boolean estDeLaBonneCouleur(char couleur, Case[][] plateau, int i, int j){
         boolean bonneCouleur = false;
+        // On regarde si la couleur de la case est de la meme couleur que le joueur
         if (plateau[i][j].couleurUnite == couleur){
             bonneCouleur = true;
         }
@@ -80,9 +82,11 @@ public class JoueurLowatem implements IJoueurLowatem {
         for (int i = 0; i < Coordonnees.NB_LIGNES; i++) {
             for (int j = 0; j < Coordonnees.NB_COLONNES; j++) {
                 if (plateau[i][j].unitePresente()) {
+                    // si c'est un unite noir on ajoute ces points de vie aux noirs
                     if (plateau[i][j].couleurUnite == 'N'){
                         pvNoir = pvNoir + plateau[i][j].pointsDeVie;
                     }else{
+                        // si elle est rouge on les ajoutes aux rouges
                         pvRouge = pvRouge + plateau[i][j].pointsDeVie; 
                     }
                 }
@@ -143,7 +147,20 @@ public class JoueurLowatem implements IJoueurLowatem {
             NbPointsDeVie nbPv) {
           actions.ajouterAction(chaineActionDepl(src, dst, nbPv));   
     }
-
+    
+    /**
+     * Ajout d'une action d'attaque dans l'ensemble des actions possibles
+     * 
+     * @param src coordonnées de la case d'origine du deplacement
+     * @param dst coordonnées de la case de destination du deplacment
+     * @param actions l'ensemble des actions possibles
+     * @param nbPv le nombre de points de vie ed chaque joueur sur le plateau
+     * @param cible coordonnées de la case de la cible de l'attaque
+     */
+    void ajoutAttaque(Coordonnees src, Coordonnees dst, ActionsPossibles actions, NbPointsDeVie nbPv, Coordonnees cible){
+        actions.ajouterAction(chaineActionAttaque(src, dst, nbPv, cible));
+    }
+    
     /**
      * Chaîne de caractères correspondant à une action-mesure de déplacement.
      *
@@ -156,5 +173,21 @@ public class JoueurLowatem implements IJoueurLowatem {
         return "" + src.carLigne() + src.carColonne()
                 + "D" + dst.carLigne() + dst.carColonne()
                 + "," + nbPv.nbPvRouge + "," + nbPv.nbPvNoir;
+    }
+
+    /**
+     * Chaîne de caractères correspondant à une action d'attaque sur une unité cible
+     * 
+     * @param src coordonnées de la case d'origine du déplacement
+     * @param dst coordonnées de la case de destination du déplacement
+     * @param nbPv Nombre de point de vie des deux camps
+     * @param cible coordonnées de la case de la cible de l'attque
+     * @return la chaîne codant cette action
+     */
+    static String chaineActionAttaque(Coordonnees src, Coordonnees dst, NbPointsDeVie nbPv, Coordonnees cible) {
+        return "" + src.carLigne() + src.carColonne()
+                + "D" + dst.carLigne() + dst.carColonne()
+                + "," + nbPv.nbPvRouge + "," + nbPv.nbPvNoir
+                + "A" + cible.carLigne() + cible.carColonne();
     }
 }

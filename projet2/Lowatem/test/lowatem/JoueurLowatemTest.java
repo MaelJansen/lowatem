@@ -19,7 +19,8 @@ public class JoueurLowatemTest {
         //testActionsPossibles_niveau1();
         //testActionsPossibles_niveau2();
         //testActionpossibles_niveau3();
-        testActionpossibles_niveau4();
+        //testActionpossibles_niveau4();
+        testActionpossibles_niveau5();
     }
 
     /**
@@ -177,6 +178,52 @@ public class JoueurLowatemTest {
         assertFalse(actionsPossibles2.contient("bFDbM,34,20"));
         // Et si le joueur n'est pas de la bonne couleur
         assertFalse(actionsPossibles2.contient("eFDeM,34,22"));
+    }
+    
+    public void testActionpossibles_niveau5(){
+        // On créer encore une fois nos deux joueur pour les test
+        JoueurLowatem joueur1 = new JoueurLowatem();
+        JoueurLowatem joueur2 = new JoueurLowatem();
+        // On définie le plateau sur lequel on veut effectuer nos test
+        Case[][] plateau = Utils.plateauDepuisTexte(PLATEAU_NIVEAU4);
+        // On définie les couleurs des joueurs
+        char couleur1 = 'R';
+        char couleur2 = 'N';
+        // On choisit le niveau
+        int niveau = 1;
+        // On lance les actions possibles pour chaques joueurs
+        // Pour le joueur 1
+        String[] actionsPossiblesDepuisPlateau1
+                = joueur1.actionsPossibles(plateau, couleur1, niveau);
+        ActionsPossibles actionsPossibles1
+                = new ActionsPossibles(actionsPossiblesDepuisPlateau1);
+        
+        // Et pour le joueur 2
+        String[] actionsPossiblesDepuisPlateau2
+                = joueur2.actionsPossibles(plateau, couleur2, niveau);
+        ActionsPossibles actionsPossibles2
+                = new ActionsPossibles(actionsPossiblesDepuisPlateau2);
+        // On affiche toute les actions possibles
+        actionsPossibles1.afficher();
+        actionsPossibles2.afficher();
+        // On fait les test pour le premier joueur
+        // On test si les déplacements sont toujours opérationels
+        assertTrue(actionsPossibles1.contient("hGDhL,34,22"));
+        // On test si les attaques fonctionnent correctement
+        assertTrue(actionsPossibles1.contient("jADjJ,34,22,jK"));
+        assertTrue(actionsPossibles1.contient("hGDbG,34,22,bF"));
+        // On test si les attaques ne faisables que au corps a corps (case adjacentes)
+        assertFalse(actionsPossibles2.contient("dADdF,34,22,bF"));
+        assertFalse(actionsPossibles2.contient("hGDhL,34,22,jK"));
+        // On Refait les mêmes test pour le deuxième joueur
+        // On test si les deplacement sont toujours opérationels
+        assertTrue(actionsPossibles2.contient("gBDgM,34,22"));
+        // On test si les attaques fonctionne
+        assertTrue(actionsPossibles2.contient("bFDdF,34,22,eF"));
+        assertTrue(actionsPossibles2.contient("jKDjB,34,22,jA"));
+        // On test si les attaques sont faisables seulement au corps a corps
+        assertFalse(actionsPossibles2.contient("jKDhK,34,22,hK"));
+        assertFalse(actionsPossibles2.contient("bFDbK,34,22,dK"));
     }
     
     @Test
